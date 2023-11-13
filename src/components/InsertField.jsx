@@ -12,28 +12,44 @@ const InsertField = () => {
   const [titleError,setTitleError]=useState("");
   const [desError,setDesError]=useState("");
 
-const handleValues=(e)=>{
- setInfo({...info,
- [ e.target.name] : e.target.value}
-  )
-}
-const handleSubmit=()=>{
-  /* http.post('/createpost',{
-    title:info.title,
-    description:info.description
-  }).then(res=>{
-    console.log(res)
-    if(res.data.status === '422'){
-      setTitleError(res.data.error.title);
-      setDesError(res.data.error.description);
-    }
-  }) */
+/* const handleValues=(e)=>{
+
   const data={
     title:info.title,
     description:info.description
   }
-  axios.post(`http://127.0.0.1:8000/api/createpost`)
-}
+  axios.post(`http://127.0.0.1:8000/api/createpost`,data).then(res=>{
+    alert(res.data.msg)
+ 
+  })
+  .catch(function(error){
+      if(error.response){
+          if(error.response.status ===422){
+            setTitleError(res.data.error.title);
+            setDesError(res.data.error.description);
+          }
+          if(error.response.status ===500){
+            alert(error.response.)
+          }
+      }
+  })
+} */
+ /*
+setInfo({...info,
+  [ e.target.name] : e.target.value}
+   )
+ }
+ const handleSubmit=()=>{
+   /* http.post('/createpost',{
+     title:info.title,
+     description:info.description
+   }).then(res=>{
+     console.log(res)
+     if(res.data.status === '422'){
+       setTitleError(res.data.error.title);
+       setDesError(res.data.error.description);
+     }
+   }) */
   return (
     <div className='max-w-[500px] mx-auto'>
       <input onChange={handleValues} name="title" type="text" placeholder="Type here" className="input input-bordered w-full  mb-3" />
