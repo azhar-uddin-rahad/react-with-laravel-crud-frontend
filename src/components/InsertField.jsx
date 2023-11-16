@@ -8,7 +8,7 @@ const InsertField = () => {
     description: "",
   });
   const [error, setError] = useState({});
-  const [desError, setDesError] = useState("");
+
 
   const handleValues=(e)=>{
     setInfo({...info,
@@ -17,8 +17,6 @@ const InsertField = () => {
 }
 const handleSubmit=()=>{
    console.log(info)
-
-
   const data={
     title:info.title,
     description:info.description

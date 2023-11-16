@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ShowList = () => {
   const [updateUser, setUpdateUser] = useState(false);
@@ -31,9 +32,9 @@ const ShowList = () => {
                   <td>{item.title}</td>
                   <td>{item.description}</td>
                   <td>
-                    <button className="bg-green-500 px-2 text-white py-2 mr-3">
+                   <Link to={`post/${item.id}/update`}><button className="bg-green-500 px-2 text-white py-2 mr-3">
                       Update
-                    </button>
+                    </button></Link>
                     <button className="bg-red-500 px-2 text-white py-2">
                       Delete
                     </button>
